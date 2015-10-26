@@ -1,0 +1,4 @@
+<p><strong>Name:</strong> <%= @item.name %></p>
+<p><strong>Cost:</strong> <%= @item.cost %> Kč</p>
+<p><strong>Note:</strong> <%= @item.note %></p>
+<p><%= link_to 'Edit', edit_item_path(@item) %> | <%= link_to 'Back', items_path %></p>
