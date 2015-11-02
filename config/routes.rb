@@ -1,26 +1,29 @@
 # == Route Map
 #
-#    Prefix Verb   URI Pattern               Controller#Action
-#     items GET    /items(.:format)          items#index
-#           POST   /items(.:format)          items#create
-#  new_item GET    /items/new(.:format)      items#new
-# edit_item GET    /items/:id/edit(.:format) items#edit
-#      item GET    /items/:id(.:format)      items#show
-#           PATCH  /items/:id(.:format)      items#update
-#           PUT    /items/:id(.:format)      items#update
-#           DELETE /items/:id(.:format)      items#destroy
-#     users GET    /users(.:format)          users#index
-#           POST   /users(.:format)          users#create
-#  new_user GET    /users/new(.:format)      users#new
-# edit_user GET    /users/:id/edit(.:format) users#edit
-#      user GET    /users/:id(.:format)      users#show
-#           PATCH  /users/:id(.:format)      users#update
-#           PUT    /users/:id(.:format)      users#update
-#           DELETE /users/:id(.:format)      users#destroy
-#      root GET    /                         users#index
+#          Prefix Verb   URI Pattern                Controller#Action
+# dashboard_index GET    /dashboard/index(.:format) dashboard#index
+#           items GET    /items(.:format)           items#index
+#                 POST   /items(.:format)           items#create
+#        new_item GET    /items/new(.:format)       items#new
+#       edit_item GET    /items/:id/edit(.:format)  items#edit
+#            item GET    /items/:id(.:format)       items#show
+#                 PATCH  /items/:id(.:format)       items#update
+#                 PUT    /items/:id(.:format)       items#update
+#                 DELETE /items/:id(.:format)       items#destroy
+#           users GET    /users(.:format)           users#index
+#                 POST   /users(.:format)           users#create
+#        new_user GET    /users/new(.:format)       users#new
+#       edit_user GET    /users/:id/edit(.:format)  users#edit
+#            user GET    /users/:id(.:format)       users#show
+#                 PATCH  /users/:id(.:format)       users#update
+#                 PUT    /users/:id(.:format)       users#update
+#                 DELETE /users/:id(.:format)       users#destroy
+#            root GET    /                          dashboard#index
 #
 
 Rails.application.routes.draw do
+  get 'dashboard/index'
+
   resources :items
   resources :users
 
@@ -28,7 +31,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#index'
+  root 'dashboard#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
