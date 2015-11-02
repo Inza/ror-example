@@ -17,7 +17,13 @@
       <td><%= item.name %></td>
       <td><%= item.cost %> Kč</td>
       <td><%= truncate item.note, length:30 %></td>
-      <td><%= item.user.full_name if item.user.present? %></td> <%# Using model method %>
+      <td>
+        <% if item.user.present? %>
+            <%= link_to item.user do %>
+                <%= item.user.full_name %>
+            <% end %>
+        <% end %>
+      </td> <%# Using model method %>
       <td><%= full_name item.user if item.user.present? %></td> <%# Using helper method %>
       <td><%= link_to 'Show', item %></td>
       <td><%= link_to 'Edit', edit_item_path(item) %></td>
