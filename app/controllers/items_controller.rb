@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class ItemsController < AdminController
   before_filter :load_item, only: [:show, :edit, :update, :destroy]
 
   def index

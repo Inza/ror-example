@@ -4,6 +4,11 @@ class DashboardController < ApplicationController
   end
 
   def ajax
-    render layout: false
+    @data = 'nbshbdljalkf;'
+
+    respond_to do |format|
+      format.html { render layout: false }
+      format.json { render json: {data:@data} }
+    end
   end
 end
